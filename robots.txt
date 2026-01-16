@@ -1,0 +1,10 @@
+# Robots.txt for Rheinland Secure
+
+User-agent: *
+Allow: /
+
+# Disallow email protection pages
+Disallow: /cdn-cgi/
+
+# Sitemap (update domain when deployed)
+# Sitemap: https://rheinland-secure.de/sitemap.xml
