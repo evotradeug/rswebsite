@@ -10,6 +10,14 @@
     
     
     <meta name="viewport" content="width=device-width">
+    <style>
+        /* Hide Framer form elements */
+        input, textarea, form, [data-framer-name*="Form"], [data-framer-name*="Input"],
+        [class*="framer-"][class*="-container"]:has(input),
+        [class*="framer-"][class*="-container"]:has(textarea) {
+            display: none !important;
+        }
+    </style>
     <meta name="generator" content="Framer 869144b">
     <title>Rheinland Secure</title>
     <meta name="description" content="Modernste Sicherheitslösungen mit Drohnen: Rheinland Secure schützt Ihr Gelände effizient &amp; rund um die Uhr. Jetzt Drohnenüberwachung entdecken!">
