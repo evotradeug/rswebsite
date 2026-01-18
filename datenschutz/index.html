@@ -591,14 +591,32 @@
         });
     }
 
+    // Remove contact forms injected by Framer
+    function removeForms() {
+        // Remove form containers by common Framer form class patterns
+        document.querySelectorAll('[class*="-container"]').forEach(function(el) {
+            if (el.querySelector('input, textarea, form')) {
+                el.remove();
+            }
+        });
+        // Remove any input/form elements directly
+        document.querySelectorAll('input, textarea, form, [data-framer-name*="Form"], [data-framer-name*="Input"]').forEach(function(el) {
+            el.remove();
+        });
+    }
+
     // Run after Framer hydration
     setTimeout(fixEmails, 100);
     setTimeout(fixEmails, 500);
     setTimeout(fixEmails, 1000);
+    setTimeout(removeForms, 100);
+    setTimeout(removeForms, 500);
+    setTimeout(removeForms, 1000);
 
     // Also observe DOM changes
     var observer = new MutationObserver(function() {
         fixEmails();
+        removeForms();
     });
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 })();
